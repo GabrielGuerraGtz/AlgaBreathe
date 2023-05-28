@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculadora de Huella de Carbono</title>
+  <link rel="stylesheet" type="text/css" href="css/huella.css">
+  <script>
+   function calcularHuella() {
+            var consumoEnergia = parseFloat(document.getElementById("consumoEnergia").value);
+            var emisionesTransporte = parseFloat(document.getElementById("emisionesTransporte").value);
+            var consumoAgua = parseFloat(document.getElementById("consumoAgua").value);
+            
+            var huellaCarbono = (consumoEnergia + emisionesTransporte + consumoAgua).toFixed(2);
+            
+            document.getElementById("resultado").innerHTML = "Tu huella de carbono es: " + huellaCarbono + " kg CO2e";
+        }
+
+</script>
+<h1>Calculadora de Huella de Carbono</h1>
+</head>
+<br>
+<body >
+  <center>
+  <conteiner aligh="center">
+<div class="claculadora">
+  <div class="calculator">
+   <br>
+   <br>
+    <label for="consumoEnergia">Consumo de Energía (kWh):</label>
+    <input type="number" id="consumoEnergia"><br>
+    
+    <label for="emisionesTransporte">Emisiones de Transporte (kg CO2e):</label>
+    <input type="number" id="emisionesTransporte"><br>
+    
+    <label for="consumoAgua">Consumo de Agua (litros):</label>
+    <input type="number" id="consumoAgua"><br>
+    <br>
+    <button onclick="calcularHuella()">Calcular</button>
+   
+    <p id="resultado"></p>
+</div>
+</div>
+</conteiner>
+<br>
+<a href="index.html"><img src="/img/boton.png" width="70px" height="70px"></a>
+</center>
+</body>
+</html>
